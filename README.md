@@ -11,27 +11,27 @@ if a rule fires:
 2- all 
 table format in miller
 
-Bundle --< bundle/rules >-- rules
-bundle/rules --> ruleQueue
-rules --< rule/tests >-- tests
-rule/tests --> testQueue
-rules --< threasholdActions >-- actions
-tests --< test/events >-- events 
-test/events --> eventQueue
-events --- Eventfunctions
-rules --< actions
-actions --< bundle+
-bundle+ --> bundle+queue
-actions --< bundle-
-bundle- --> bundle-queue
-actions --< functions-before >-- functions
-functions-before --> functionsQueue
-actions --< functions-after >-- functions
-functions-after --> functionsQueue
-sequenceer
+Bundle --< bundle/rules >-- rules ;;
+bundle/rules --> ruleQueue ;;
+rules --< rule/tests >-- tests ;;
+rule/tests --> testQueue ;;
+rules --< threasholdActions >-- actions ;;
+tests --< test/events >-- events ;;
+test/events --> eventQueue ;;
+events --- Eventfunctions ;;
+rules --< actions ;;
+actions --< bundle+ ;;
+bundle+ --> bundle+queue ;;
+actions --< bundle- ;;
+bundle- --> bundle-queue ;;
+actions --< functions-before >-- functions ;;
+functions-before --> functionsQueue ;;
+actions --< functions-after >-- functions ;;
+functions-after --> functionsQueue ;;
+sequenceer ;;
 
-bundle ((BID(desc, coldSW, ReadySW)
-bundle/rules((BID,RID))
-rules((RID))
+bundle ((BID(desc, coldSW, ReadySW) ;;
+bundle/rules((BID,RID)) ;;
+rules((RID)) ;;
 ..
-functions-before 
+
