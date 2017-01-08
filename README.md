@@ -1,11 +1,14 @@
 # BERTA
 a workflow engine that will test events as called for (qusi real time)
-bundles consist of rules
-rules consist of tests
-tests consist of weighted events
-events call functions that will examine the real world
-at the end of the test the sum of the weighted events will be used in comparison to that rules threashold numbers
-a rule is said to fire if some threashold number is exceeded (in the case of multiple threasholds the max number reached)
+Bundles - bundles consist of rules
+Rules - rules consist of tests and actions
+Tests - tests consist of weighted events
+Actions - actions can update bundles to make them active or to deactivate them; actions can also call processes before or after those updates.
+Events - events call functions that examine the real world.
+
+
+at the end of the test the sum of the weighted events will be used in comparison to that rules action threashold numbers.
+a rule is said to fire if one of its actions threashold number is exceeded 
 if a rule fires:
 1 - all of the functions-before are collected to the functions queue
 2- all 
@@ -29,6 +32,12 @@ functions-before --> functionsQueue ;;
 actions --< functions-after >-- functions ;;
 functions-after --> functionsQueue ;;
 sequenceer ;;
+bundle ==//fn1//==> bundle-que ;;
+rule ==//fn2//==> rule-que ;;
+test ==//fn3//==> test-que ;;
+event ==//fn4//==> event-que ;;
+pdxn --< pdxGraph ;;
+pdx.main ==> eventFunctions ; processFunctions /* sub sets */
 
 bundle ((BID(desc, coldSW, ReadySW) ;;
 bundle/rules((BID,RID)) ;;
