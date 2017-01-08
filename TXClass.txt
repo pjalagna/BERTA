@@ -1,0 +1,9 @@
+file: TXClass.txt
+
+table TList (( tname ) description ) ;; /* fixed vocabulary for timing sections */
+
+table TNext (( Tx @ Tlist.tname , Ty @ Tlist.tname  ) description ) ;;
+
+table Tcur (( V ) Tc ) ;;
+
+TNext ==//fn(Tcur.Tc@Tcur.V='v') => Ty -> Tc @ Tcur.V = 'v'// ==> Tcur ;;
