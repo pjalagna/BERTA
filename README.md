@@ -15,8 +15,11 @@ if a rule fires:
 table format in miller
 
 Bundle --< bundle/rules >-- rules ;;
+
 bundle/rules --> ruleQueue ;;
+
 rules --< rule/tests >-- tests ;;
+
 rule/tests --> testQueue ;;
 rules --< threasholdActions >-- actions ;;
 tests --< test/events >-- events ;;
