@@ -1,15 +1,19 @@
 # BERTA
-a workflow engine that will test events as called for (qusi real time)
+a workflow engine that will test events as called for (qusi real time). Which consists of the following objects:
+
 Bundles - bundles consist of rules
-Rules - rules consist of tests and actions
-Tests - tests consist of weighted events
-Actions - actions can update bundles to make them active or to deactivate them; actions can also call processes before or after those updates.
+
 Events - events call functions that examine the real world.
 
+Rules - rules consist of tests and actions.
+
+Tests - tests consist of weighted events
+
+Actions - actions can update bundles to make them active or to deactivate them; actions can also call processes before or after those updates.
 
 at the end of the test the sum of the weighted events will be used in comparison to that rules action threashold numbers.
 a rule is said to fire if one of its actions threashold number is exceeded 
-if a rule fires:
+if a rule fires:<br />
 1 - all of the functions-before are collected to the functions queue
 2- all 
 table format in miller
