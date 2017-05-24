@@ -1,0 +1,47 @@
+# agentHeadClass.py
+class AgentHead:
+"""- 
+pja - 05-24-2017 orig
+
+usage 
+include AgentHeadClass
+m = AgentHeadClass.AgentHead(mark1,
+
+
+parameters
+    mark1 - code of tick.c to activate this agent
+"""
+    def __init__(self,mark1,Work,nextTick):
+        ctl = 0
+        while ( ctl == 0):
+            j = SQRead1("select c from Tick;")
+            if (j == "die"):
+                ctl = -1 # break
+            elif (j == mark1):
+                Work()
+                #next tick
+            else:
+                sleep(1500) # test 1500 , production 20
+            #endif
+        #wend
+
+
+def Work(t1,c1,c2,c2s):
+    """ does function 
+//b// - getWhere(bid, b.cold=on) -> //bq1//
+(A)
+/* from bb get children of bq1 */
+//bb// - getIn(b.child,b.parent,in(bq1)) -> //bq2// if nof ⇒ goto (B)
+/* move bq1 to final NOTE: move not copy*/
+//bq1// - move(bq1,bq3) -> //bq3//
+/* move bq2 (child) to become parents */
+//bq2// - move(bq2,bq1) -> //bq1//
+Goto (A)
+====
+(B)
+Set tick.C = TRule1
+
+    """
+    q1 = "select " + c1 + " from " + t1 + " where " + c2 + " = '"+ c2s + "'; "
+    SQList(q1,xq1)
+    sq2 = "select into  " + xq2 + 
